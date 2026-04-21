@@ -1,23 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "가정집 인터넷 설치",
+    "name": "전국 가정집 인터넷 설치 비교센터",
+    "url": "https://www.internet-install-guide.com",
+    "image": "https://images.pexels.com/photos/1036815/pexels-photo-1036815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "2026년 최신 전국 가정집 인터넷 설치 가격 비교 및 현금 사은품 혜택 안내. SKT, KT, LG U+ 등 통신사별 요금제와 결합 할인 정보를 제공합니다.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "전국"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "전국 인터넷 설치 전문가 그룹",
+      "telephone": "+82-1600-0000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressRegion": "Seoul",
+        "addressLocality": "Gangnam-gu",
+        "streetAddress": "Seoul"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1250"
+    }
+  }
+  </script>
+
+  <!-- CSS Design -->
+  <style>
+    body { font-family: 'Malgun Gothic', 'Segoe UI', sans-serif; margin: 0; padding: 0; line-height: 1.8; color: #333; background-color: #f7f9fc; }
+    header { background: #004d99; color: #fff; padding: 40px 20px; text-align: center; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+    header p { font-size: 1.2rem; margin-bottom: 20px; font-weight: 300; }
+    .cta-btn { background: #ff7043; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 1.1rem; display: inline-block; transition: background-color 0.3s ease; }
+    .cta-btn:hover { background-color: #e65100; }
+    nav { background: #ffffff; padding: 15px 0; border-bottom: 1px solid #ddd; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    nav a { margin: 0 15px; color: #004d99; text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease; }
+    nav a:hover { color: #ff7043; }
+    section { padding: 40px 20px; background-color: #fff; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    h2 { font-size: 2rem; color: #004d99; border-bottom: 2px solid #ff7043; padding-bottom: 10px; margin-bottom: 25px; font-weight: 600; }
+    h3 { font-size: 1.5rem; color: #333; margin-top: 20px; margin-bottom: 15px; font-weight: 600; }
+    p { margin-bottom: 20px; font-size: 1rem; color: #444; }
+    ul { padding-left: 25px; margin-bottom: 20px; }
+    li { margin-bottom: 10px; font-size: 1rem; color: #555; }
+    .content-container { max-width: 1000px; margin: auto; }
+    .flex-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+    .flex-item { flex: 1; min-width: 300px; background: #f9f9f9; padding: 20px; border-radius: 6px; border-left: 4px solid #004d99; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .comparison-table th, .comparison-table td { border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 0.95rem; }
+    .comparison-table th { background-color: #eef3f7; color: #004d99; font-weight: bold; }
+    .quote-form input, .quote-form select, .quote-form button { display: block; width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+    .quote-form button { background: #004d99; color: #fff; border: none; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; }
+    .quote-form button:hover { background-color: #003366; }
+    .image-container { width: 100%; max-height: 400px; overflow: hidden; margin-bottom: 25px; border-radius: 8px; }
+    .image-container img { width: 100%; height: auto; object-fit: cover; }
+    .keyword-section { background: #f0f8ff; padding: 20px; border-radius: 8px; margin-top: 20px; }
+    .external-link { color: #004d99; text-decoration: underline; font-weight: 500; }
+    footer { background: #333; color: #fff; text-align: center; padding: 30px; font-size: 0.9rem; margin-top: 20px; }
+    footer p { color: #ccc; margin-bottom: 5px; }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .flex-item { min-width: 100%; }
+      .comparison-table { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>가정집 인터넷 설치: SKT, KT, LG 초고속 인터넷 가입 완벽 가이드</h1>
+    <p>2026년 최신 가격 비교, 현금 사은품 혜택, 통신사별 장단점 분석. 전국 어디든 설치 가능.</p>
+    <a href="#quote-form" class="cta-btn">인터넷 설치 무료 견적 및 사은품 조회하기</a>
+  </header>
+
+  <nav class="content-container">
+    <a href="#services">인터넷 상품</a>
+    <a href="#comparison">통신사 비교</a>
+    <a href="#benefits">사은품 혜택</a>
+    <a href="#guide">가입 절차</a>
+    <a href="#faq">FAQ</a>
+    <a href="#quote-form">견적 문의</a>
+  </nav>
+
+  <div class="content-container">
+    <section id="services">
+      <h2>전국 가정집 인터넷 설치 서비스 유형 분석: 광랜, 기가, 5G</h2>
+      <div class="image-container">
+        <!-- Pexels Image Source: https://www.pexels.com/search/home%20internet/ -->
+        <img src="https://images.pexels.com/photos/1036815/pexels-photo-1036815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="가정집 인터넷 설치 이미지">
+      </div>
+      <p>가정집 인터넷 설치를 고려할 때 가장 먼저 결정해야 할 것은 어떤 유형의 인터넷 상품을 선택할지입니다. 2026년 현재, 주요 통신사(SKT, KT, LG U+)가 제공하는 상품은 속도와 기술에 따라 광랜, 기가인터넷, 그리고 5G 무선 인터넷으로 나뉩니다. 각 유형별 특징과 장단점을 정확히 파악하여 본인의 사용 환경에 맞는 최적의 선택을 하는 것이 중요합니다.</p>
+
+      <div class="flex-row">
+        <div class="flex-item">
+          <h3>1. 초고속 광랜 (100Mbps)</h3>
+          <p>가장 기본적인 인터넷 속도로, 주로 웹서핑이나 간단한 문서 작업 등 가벼운 사용에 적합합니다. 1인 가구, 원룸, 투룸 이사 시 합리적인 가격으로 이용할 수 있는 저렴한 상품입니다. 넷플릭스나 유튜브 시청에는 큰 무리가 없으나, 고화질 스트리밍이나 대용량 파일 다운로드에는 속도 한계가 있습니다. SKT, KT, LG U+ 모두 주력으로 판매하는 상품 중 하나이며, 평균 가격이 가장 낮아 저렴한곳을 찾는 고객에게 추천됩니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>2. 기가 인터넷 (500Mbps~1Gbps)</h3>
+          <p>최근 대부분의 가정집에서 가장 선호하는 상품입니다. 4K UHD 스트리밍, 대용량 온라인 게임, 화상 회의 등 다중 사용자가 동시에 높은 트래픽을 사용할 때도 끊김 없이 안정적인 속도를 제공합니다. 특히 아파트, 빌라 등 가족 단위 거주 공간에서 필수적인 선택으로 꼽힙니다. 500Mbps 상품은 '기가 라이트'로 불리며, 1인 가구 또는 2~3인 가구에서 가성비(가성비) 좋은 선택지로 평가받습니다. 1Gbps 상품은 '기가 프리미엄'으로 불리며, 4인 이상 가정이나 스마트홈 환경에 적합합니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>3. 5G 무선 인터넷 (FWA)</h3>
+          <p>광케이블 설치가 어려운 지역이나 이사가 잦은 원룸, 투룸 고객에게 새로운 대안으로 부상하고 있습니다. 유선 인터넷처럼 별도 설치 과정 없이 5G 모바일 신호를 받아 인터넷을 이용하는 방식입니다. 다만, 유선 인터넷 대비 속도 안정성이 떨어질 수 있고, 월평균 가격이 다소 비쌀 수 있습니다. KT, SKT 등 주요 통신사에서는 특정 지역 한정으로 서비스를 제공하며, 가입 전 설치 가능 여부 확인이 필수입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <h2>통신사별 인터넷 상품 비교: SK, KT, LG U+ 장단점 및 요금제 분석</h2>
+      <p>가정집 인터넷 설치 시 가장 큰 고민은 어떤 통신사를 선택할지입니다. SK브로드밴드, KT 올레, LG유플러스는 각기 다른 장단점과 요금 정책을 가지고 있습니다. 2026년 최신 정보를 바탕으로 각 통신사의 특징을 상세히 비교하여, 고객님의 상황에 맞는 최적의 통신사를 선택할 수 있도록 돕습니다. '내돈내산' 후기를 바탕으로 한 사용자 만족도 순위도 참고해 보시기 바랍니다.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>KT 올레 (Olleh)</th>
+            <th>SK 브로드밴드 (Broadband)</th>
+            <th>LG 유플러스 (U+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>주요 강점</strong></td>
+            <td>가장 넓은 커버리지와 안정적인 품질, 통신 품질 만족도 1위. 전국 어디든 설치 용이.</td>
+            <td>가족 결합 할인(T 결합) 혜택 강력. IPTV 콘텐츠 및 AI 스피커 연동 우수.</td>
+            <td>저렴한 가격 정책, 넷플릭스 등 OTT 결합 상품 특화, 요금제 가성비 우수.</td>
+          </tr>
+          <tr>
+            <td><strong>추천 대상</strong></td>
+            <td>통신 품질을 최우선으로 생각하는 고객, 안정적인 속도를 원하는 고객.</td>
+            <td>SKT 휴대폰을 사용하는 가족 구성원이 많은 고객, AI 서비스 활용 고객.</td>
+            <td>LG U+ 휴대폰을 사용하는 고객, OTT 서비스를 즐겨보고 싶은 고객.</td>
+          </tr>
+          <tr>
+            <td><strong>대표 상품명</strong></td>
+            <td>KT 인터넷 (슬림, 베이직, 기가)</td>
+            <td>SKT 초고속 인터넷 (광랜, 기가 라이트, 기가)</td>
+            <td>LG U+ 인터넷 (라이트, 기가, 프리미엄)</td>
+          </tr>
+          <tr>
+            <td><strong>현금 사은품</strong></td>
+            <td>높은 현금 사은품 기준, 시장 평균 이상.</td>
+            <td>통신사 결합 시 혜택 증가, 현금 지원 금액 우수.</td>
+            <td>경쟁적인 현금 지원, 요금제 대비 혜택 우수.</td>
+          </tr>
+          <tr>
+            <td><strong>결합 할인</strong></td>
+            <td>KT 모바일 결합(가족 결합) 할인 폭이 큼.</td>
+            <td>SKT 모바일 결합(온가족 할인) 혜택이 가장 강력.</td>
+            <td>LG U+ 모바일 결합(참쉬운 가족 결합) 혜택.</td>
+          </tr>
+          <tr>
+            <td><strong>단점</strong></td>
+            <td>타 통신사 대비 평균 요금이 다소 높을 수 있음.</td>
+            <td>일부 외곽 지역(제주, 도서산간 등) 커버리지 불리.</td>
+            <td>지역에 따라 인터넷 품질 차이가 발생할 수 있음.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>가장 중요한 것은 '우리 집' 환경에서 어떤 통신사가 가장 잘 터지는지 확인하는 것입니다. 아파트나 빌라의 경우, 이미 들어와 있는 인프라가 통신사별 차이를 만들 수 있습니다. 특히 <strong>SK 브로드밴드</strong>와 <strong>LG U+</strong>는 KT 대비 후발 주자이기 때문에 일부 지역에서는 품질 차이가 발생할 수 있습니다. 반면 <strong>KT</strong>는 전국 어디든 광케이블 구축이 잘 되어있어 안정성이 높습니다.</p>
+    </section>
+
+    <section id="benefits">
+      <h2>인터넷 가입 시 사은품 및 현금지원 혜택 극대화 전략</h2>
+      <p>인터넷 설치를 고려하는 많은 고객들이 '얼마'나 받을 수 있는지, '현금 지원금'이 얼마나 되는지를 중요하게 생각합니다. 2026년 기준으로 인터넷 신규 가입 시 받을 수 있는 사은품은 크게 현금과 상품권으로 나뉩니다. 사은품 규모는 통신사, 요금제(속도), 가입 채널에 따라 크게 달라지며, 불법적인 과대광고에 현혹되지 않도록 주의해야 합니다.</p>
+      <div class="flex-row">
+        <div class="flex-item">
+          <h3>1. 현금 사은품: '평균'을 알고 '최대'를 노려라</h3>
+          <p>현금 사은품은 인터넷 설치 후 일정 기간(보통 1~2주) 내에 입금되는 경우가 많습니다. '초고속 인터넷 가입 시 현금지원금 100만원 지급!'과 같은 과대광고는 미끼 상품일 가능성이 높습니다. 한국통신사업자연합회(KCTA)에서 정한 '경품고시제'에 따라 사은품 상한선이 존재합니다. 2026년 기준, 사은품 지급액은 통신사별, 상품별로 정해진 최대 금액을 초과할 수 없습니다. 따라서 여러 곳을 비교하여 합법적인 범위 내에서 최대 금액을 제공하는 업체를 선택하는 것이 가장 저렴한곳을 찾는 방법입니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>2. 통신사 결합 할인: 혜택의 핵심</h3>
+          <p>사은품만큼 중요한 것이 매월 청구되는 요금 할인입니다. SKT, KT, LG U+는 모두 휴대폰 요금과 인터넷 요금을 결합할 경우 큰 폭의 할인 혜택을 제공합니다. 특히 SKT의 '온가족 할인'은 가족 구성원 수에 따라 할인율이 높아져, 3~4인 이상 가정에서 가장 많은 비용 절감을 가져올 수 있습니다. KT는 '총액 결합 할인'으로 모바일 요금 합산액에 따라 할인이 적용되며, LG U+는 '참쉬운 가족 결합'을 통해 다양한 할인 상품을 제공합니다. 신규 가입 시 이 결합 할인을 먼저 계산하여 예상 금액을 산출해야 합니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>3. 신규 가입 혜택: 놓치지 말아야 할 추가 지원</h3>
+          <p>통신사를 변경하여 신규 가입할 경우, 기존 통신사에서 받지 못했던 '신규 혜택'을 받을 수 있습니다. 이는 단순히 현금 사은품 외에도 상품권, OTT 구독권, 또는 가전제품 증정 이벤트 등이 포함될 수 있습니다. 2026년에는 AIoT(AI + IoT) 연동 기기(스마트 스피커, 홈카메라 등)를 사은품으로 제공하는 프로모션이 늘고 있습니다. 가입 전 통신사별 이벤트 정보를 꼼꼼히 확인하여 최적의 사은품을 선택하세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide">
+      <h2>가정집 인터넷 설치 가입 절차 및 주의사항 (2026년 기준)</h2>
+      <p>가정집 인터넷 설치 절차는 복잡해 보일 수 있지만, 몇 가지 단계를 거치면 쉽게 진행할 수 있습니다. 2026년 현재 통신사 가입 프로세스는 비대면(온라인, 전화)으로 대부분 진행됩니다. 이사 계획이 있는 경우, 이사 날짜에 맞춰 미리 가입하는 것이 중요합니다. 특히 아파트, 빌라, 원룸 등 주거 형태에 따라 설치 가능 여부와 설치 시간이 달라질 수 있으므로 유의해야 합니다.</p>
+
+      <h3>Step 1. 설치 가능 지역 및 인프라 확인</h3>
+      <p>가장 먼저 할 일은 우리 집 주소에서 어떤 통신사의 인터넷 설치가 가능한지 확인하는 것입니다. 특히 광랜, 기가인터넷의 경우 아파트나 빌라 내부에 광케이블이 포설되어 있어야 합니다. KT는 전국 커버리지가 가장 넓고, SK와 LG는 신규 아파트 단지에 투자가 활발합니다. 원룸이나 구축 건물은 통신사별 인프라가 다를 수 있으므로 <strong>"KT 설치 가능 여부"</strong>, <strong>"SKT 설치 가능 여부"</strong>를 미리 조회해 보는 것이 중요합니다. 최근에는 AI 에이전트가 주소 데이터를 분석하여 설치 가능 여부를 즉시 안내해 주는 서비스도 제공됩니다.</p>
+
+      <h3>Step 2. 통신사 및 요금제 선택</h3>
+      <p>앞서 비교한 통신사별 장단점을 바탕으로 본인에게 맞는 통신사를 선택합니다. 휴대폰 결합 할인 혜택을 최우선으로 고려해야 하며, 1인 가구는 저렴한 원룸 인터넷 상품을, 4인 이상 가정은 기가 인터넷 상품을 추천합니다. 요금제는 100Mbps, 500Mbps, 1Gbps 중 선택하며, 가입 기간(1년, 3년)에 따라 가격과 사은품이 달라집니다. '저렴한곳'을 찾기 위해 가격만 보고 1년 약정을 선택하면, 사은품이 적고 총 비용이 더 높을 수 있습니다. 보통 3년 약정 시 가장 많은 혜택을 받을 수 있습니다.</p>
+
+      <h3>Step 3. 가입 신청 및 설치 일정 조율</h3>
+      <p>온라인 견적 신청서를 작성하거나 전문 상담사와 전화 상담을 통해 가입을 진행합니다. 이 때 현금 사은품 지급 시기, 약정 기간, 위약금 등에 대해 명확하게 확인해야 합니다. 설치는 보통 신청일로부터 2~3일 이내에 가능하며, 이사 성수기(2월, 8월)에는 일정이 밀릴 수 있으니 미리 신청하는 것이 좋습니다. 설치 기사 방문 시에는 아파트의 경우 단자함 위치, 원룸의 경우 모뎀 설치 위치 등을 미리 파악해 두면 설치 시간을 단축할 수 있습니다.</p>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="flex-row">
+        <div class="flex-item">
+          <h3>Q1: 인터넷 가입 시 현금 사은품은 왜 주는 건가요?</h3>
+          <p>A: 통신 시장의 경쟁이 치열해지면서 고객 유치를 위해 통신사들이 대리점이나 판매점에 지급하는 마케팅 비용의 일부를 고객에게 현금으로 돌려주는 것입니다. '경품고시제'에 따라 현금 지원 금액이 상한선 내에서 지급됩니다. 불법적인 과대광고는 피하고, 합법적인 범위 내에서 최대 금액을 주는 곳을 선택해야 합니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>Q2: 아파트와 원룸의 인터넷 설치 차이점은 무엇인가요?</h3>
+          <p>A: 아파트는 통신사별 광케이블이 공동 단자함까지 연결되어 있어 설치가 비교적 수월하고 안정적입니다. 반면 원룸은 오래된 건물인 경우 광케이블 인프라가 미흡할 수 있으며, UTP 케이블(동축 케이블) 방식만 지원되는 경우도 있습니다. 이런 경우 속도가 느릴 수 있으니 가입 전 정확한 주소 조회를 통해 '원룸 인터넷' 전용 상품을 확인해야 합니다.</p>
+        </div>
+        <div class="flex-item">
+          <h3>Q3: 약정 기간 만료 전 해지 시 위약금은 얼마나 되나요?</h3>
+          <p>A: 3년 약정의 경우, 약정 기간이 끝나기 전에 해지하면 위약금이 발생합니다. 위약금은 보통 '사은품 반환금'과 '약정 할인 반환금'으로 구성됩니다. 이사 시 불가피하게 해지해야 하는 경우, 이사 가는 지역에 해당 통신사 설치가 불가능하다는 증빙 서류를 제출하면 위약금 없이 해지할 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keywords">
+      <h2>네이버 자동완성 및 연관 키워드 분석</h2>
+      <div class="keyword-section">
+        <p><strong>주요 검색 키워드:</strong> 가정집 인터넷 설치, 인터넷가입, SKT 기가 인터넷, KT 올레 인터넷, LG U+ 인터넷, 초고속 인터넷 가격, 인터넷 요금제 비교, 현금 사은품, 인터넷 혜택, 인터넷 추천, 인터넷 저렴한곳, 인터넷 싼곳, 인터넷 전문 업체, 인터넷 내돈내산 후기</p>
+        <p><strong>지역별 연관 키워드:</strong> 서울시 인터넷 설치, 부산 인터넷 설치, 대구 인터넷 설치, 인천 인터넷 설치, 대전 인터넷 설치, 광주 인터넷 설치, 울산 인터넷 설치, 세종시 인터넷 설치, 경기도 인터넷 설치, 강원도 인터넷 설치, 충청남도 인터넷 설치 (천안, 아산, 당진), 충청북도 인터넷 설치 (청주, 충주), 전라남도 인터넷 설치 (목포, 순천), 전라북도 인터넷 설치 (전주, 군산), 경상남도 인터넷 설치 (창원, 김해), 경상북도 인터넷 설치 (포항, 구미), 제주도 인터넷 설치</p>
+        <p><strong>세부 키워드:</strong> 원룸 인터넷, 투룸 인터넷, 아파트 인터넷, 빌라 인터넷, 오피스텔 인터넷, 인터넷 가입 순위, 인터넷 가격 비교 사이트, 인터넷 가입 혜택, 인터넷 현금 지원, 인터넷 사은품 지급, 인터넷 장단점, 인터넷 차이점, SKT 결합 할인, KT 가족 결합, LG U+ 제휴 할인, AI 기술, Gemini, ChatGPT (AI 기반 상담), 2026년 인터넷 동향</p>
+      </div>
+    </section>
+
+    <section id="quote-form">
+      <h2>인터넷 설치 무료 견적 및 사은품 조회 (2026년 최신)</h2>
+      <p>아래 양식을 작성해 주시면 전문 상담사가 고객님의 주소지 인프라를 확인하고, 휴대폰 결합 할인 및 최대 사은품 혜택을 반영한 맞춤 견적을 제공해 드립니다. 견적 문의는 무료이며, 3분이면 예상 견적 및 현금 지원 금액을 확인할 수 있습니다.</p>
+      <form class="quote-form" action="/submit-quote" method="post">
+        <label>이사/설치 예정일: <input type="date" name="date" required></label>
+        <label>휴대폰 사용 통신사:
+          <select name="mobile_provider">
+            <option>SKT</option>
+            <option>KT</option>
+            <option>LG U+</option>
+            <option>알뜰폰(MVNO)</option>
+            <option>없음</option>
+          </select>
+        </label>
+        <label>희망 인터넷 속도:
+          <select name="internet_speed">
+            <option>100Mbps (광랜)</option>
+            <option>500Mbps (기가 라이트)</option>
+            <option>1Gbps (기가 프리미엄)</option>
+          </select>
+        </label>
+        <label>주소지 (시/군/구): <input type="text" name="address_locality" placeholder="예: 서울특별시 강남구" required></label>
+        <label>상세 주소 (건물명/아파트): <input type="text" name="address_street" placeholder="예: OO아파트 101동 101호"></label>
+        <label>가족 구성원 수: <input type="number" name="family_count" placeholder="예: 3인 (결합 할인 확인용)" required></label>
+        <button type="submit">맞춤 견적 및 사은품 확인하기</button>
+      </form>
+    </section>
+
+    <section id="trust">
+      <h2>신뢰할 수 있는 정보 출처 및 관련 법규</h2>
+      <p>본 페이지의 정보는 공신력 있는 기관의 데이터를 바탕으로 작성되었습니다. 인터넷 가입 시 반드시 다음 정보를 참고하여 소비자 권익을 보호하세요.</p>
+      <ul>
+        <li><a class="external-link" href="https://www.kcc.go.kr" target="_blank">방송통신위원회 (KCC)</a>: 인터넷 서비스 관련 정책 및 규정 확인.</li>
+        <li><a class="external-link" href="https://www.ict.go.kr" target="_blank">과학기술정보통신부</a>: ICT 기술 동향 및 통신 시장 관련 정보.</li>
+        <li><a class="external-link" href="https://www.ktoa.or.kr" target="_blank">한국통신사업자연합회 (KTOA)</a>: 통신사별 경품 상한액(경품고시제) 기준 확인.</li>
+        <li><a class="external-link" href="https://namu.wiki/w/인터넷" target="_blank">나무위키: 인터넷</a>: 인터넷 기술의 역사 및 개념 참고.</li>
+        <li><a class="external-link" href="https://www.consumer.go.kr" target="_blank">한국소비자원</a>: 통신 서비스 관련 소비자 상담 및 분쟁 조정.</li>
+      </ul>
+    </section>
+  </div> <!-- content-container end -->
+
+  
